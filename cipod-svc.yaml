@@ -9,10 +9,10 @@ spec:
   - name: nginx-container 
     image: nginx:latest 
     ports:
-      name: nginx-port 
-      conatinerPort: 80
+      - name: nginx-port 
+        containerPort: 80
 ---
-apiversion: v1
+apiVersion: v1
 kind: service
 metadata: 
   name: ci-svc 
@@ -26,4 +26,4 @@ spec:
     - name: ci-svc-port
       protocol: TCP 
       port: 80
-      targetport: 80
+      targetPort: 80
