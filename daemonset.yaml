@@ -1,0 +1,22 @@
+apiVersion: apps/v1 
+kind: DaemonSet
+metadata: 
+  name: my-daemon 
+  labels: 
+    app: my-daemon
+spec:
+  selector:
+    matchLabels:
+      app: daemon 
+  template:
+    metadata:
+      labels:
+        app: daemon 
+    spec:
+      containers:
+      - name: daemon-container 
+        image: amazon/clouswatch-agent 
+        ports:
+          - containerPort: 80 
+
+      
