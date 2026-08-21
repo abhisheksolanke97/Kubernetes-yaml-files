@@ -1,0 +1,22 @@
+apiVersion: apps/v1 
+kind: StatefulSet 
+metadata: 
+  name: my-ss 
+  labels: 
+    app: ss 
+spec: 
+  replicas: 3 
+  selector: 
+    matchLabels:
+      app: ss 
+  template: 
+    metadata: 
+       labels: 
+         app: ss 
+    spec: 
+      containers:
+        - name: mysql_rot-passwd
+          valueFrom: 
+            configMapkeyRef:
+              name: my-config 
+              key: mysql_passwd

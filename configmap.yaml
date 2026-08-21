@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: ConfigMap 
+metadata: 
+  name: my-config 
+  labels: 
+    app: cm 
+data: 
+mysql_rot-passwd: root 
+mysql_user: admin 
+mysql_passwd: admin123 
+mysql_database: student_db 
+
